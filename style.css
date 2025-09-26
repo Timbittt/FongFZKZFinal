@@ -8,16 +8,20 @@ html {
 }
 
 body {
+    color: lightblue;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 header {
     justify-self: flex-start;
-    background-color: greenyellow;
+    background-color: black;
     padding: 1em 1em;
     margin: -1em 0 0 0;
+    color: azure;
 }
 
 div {
@@ -25,7 +29,7 @@ div {
 }
 
 .container {
-    background-color: aqua;
+    background-color: darkblue;
     display: flex;
     justify-content: center;
     padding: 1rem;
@@ -33,14 +37,14 @@ div {
 }
 
 .blog-post {
-    background-color: lightseagreen;
+    background-color: navy;
     width: 50rem;
     padding: 1em;
 }
 
 footer {
     justify-self: flex-end;
-    background-color: greenyellow;
+    background-color: black;
+    color: white;
     padding: 1em;
-
 }
