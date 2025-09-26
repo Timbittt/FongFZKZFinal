@@ -44,8 +44,8 @@ div {
 
 .blog-post img {
     padding: 1em;
-    height: 20em;
-    width: auto;
+    height: auto;
+    width: 20em;
 }
 
 footer {
