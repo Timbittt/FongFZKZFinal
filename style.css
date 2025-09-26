@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 *, *::before, *::after{
@@ -7,13 +8,13 @@ html {
 }
 
 body {
-    background-color: azure;
-    margin: 0 10em;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 header {
+    justify-self: flex-start;
     background-color: greenyellow;
     padding: 1em 1em;
     margin: -1em 0 0 0;
@@ -28,6 +29,7 @@ div {
     display: flex;
     justify-content: center;
     padding: 1rem;
+    flex-grow: 1;
 }
 
 .blog-post {
@@ -37,7 +39,8 @@ div {
 }
 
 footer {
+    justify-self: flex-end;
     background-color: greenyellow;
-    margin: 100% 0 0 0;
     padding: 1em;
+
 }
