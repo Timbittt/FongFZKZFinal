@@ -42,6 +42,12 @@ div {
     padding: 1em;
 }
 
+.blog-post img {
+    padding: 1em;
+    height: 20em;
+    width: auto;
+}
+
 footer {
     justify-self: flex-end;
     background-color: black;
