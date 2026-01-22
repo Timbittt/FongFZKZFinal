@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Physics Final Project - Radio Astronomy Blog</title>
+    <link rel="stylesheet" href="../../style.css"/>
+    <title>Reflection</title>
 </head>
+
 <body>
     <article class="container">
         <div class="blog-post">
-            
+            <h1>The Design</h1>
+
+            <p>With my research completed, I turned to making my physical product. For the design, I was planning to
+                simply measure the output from the satellite dish and build a mechanism to allow the dish to scan the
+                sky, but faced some challenges.</p>
+
+            <p>The first mistake I made was thinking that the satellite dish measured a frequency of around 1-2GHz. This
+                would have been optimal for observing the 1.4GHz Hydrogen Line radiation emitted by the Milky Way, which
+                is the most frequently measured by Radio Satellites. However, the dish actually receives around 10GHz,
+                and its Low-Noise Block Downconverter (LNB) processes the signal and reduces the frequency to 1-2GHz.
+                This was unfortunate, but I would still be able to detect satellites and the Sun, which emit a wider
+                range of frequencies.</p>
+
+            <p>Another problem was the high frequency of the satellite dish's output. While 2GHz is approximately what
+                we use for wi-fi and other wireless electronics, you still need specialized components that function at
+                high frequencies. For example, components like diodes, that are supposed to keep current moving in one
+                direction and block current in the other, will 'leak' and let current through both ways if the frequency
+                changes fast enough. This means that common methods of measurement don't work, like an Arduino, so I
+                bought a satellite finder, which is commonly used to align Satellite TV dishes. The satellite finder
+                only measures the total strength of the signal, so all information regarding the frequency is lost,
+                which isn't ideal, but it would work for my project. With the absolute output of the satellite finder, I
+                could now hook up an Arduino and record the total strength of the signal received.</p>
+
+            <p>Next, I needed to supply the 18V used by the satellite dish's internal components. Usually, it is
+                provided by the TV and the receiver it is connected to. Instead, I created a power supply using
+                batteries. This works better for measurements because batteries do not produce fluctuating voltages,
+                unlike an AC power supply. I did not have enough time to create a mechanism to move the satellite dish
+                automatically, but I was still able to make some measurements by manually moving the antenna.</p>
+
+            <hr>
+
+            <h2>Challenges and Problem Solving</h2>
+
+            <p>I chose a difficult topic for my project and faced a lot of challenges as a result, from difficulties
+                with taking measurements and powering it, to an irreplaceable part breaking. Even researching was
+                challenging, since radio astronomy relies on advanced fields like quantum physics and electronics. But
+                the journey of undertaking the project and the physics knowledge I gained made it worthwhile.</p>
+
+            <p>When I first tested my product, I was getting a ton of random noise in my readings, making it completely
+                illegible. I remembered that any wire can act as an antenna—a moving electromagnetic wave will induce a
+                current through induction. This is why many radio telescopes are located far from civilization or in
+                Radio Quiet Zones. To combat this, I used aluminum foil to shield components when taking measurements.
+                Additionally, I decided to apply what we learned in class when doing labs: taking multiple measurements
+                and averaging them to get a more accurate result. By combining these strategies, I was able to achieve
+                significantly improved readings and take some successful measurements.</p>
+
+            <p>Another big problem I had was supplying consistent power to the satellite dish. I could not use an outlet
+                power-supply because the AC would cause too much electrical noise and prevent proper measurements. Using
+                batteries was difficult as well, since I needed 18V to power the satellite dish. I initially used two 9V
+                batteries, but they would run out quickly. I settled on using twelve 1.5V D-cell batteries, which are
+                similar to AA batteries but last much longer. I also had issues with wires disconnecting, so I asked my
+                friend, who had experience working with electronics and learned how to properly solder. In the end, I
+                was able to use what I learned from trial and error to create a reliable setup.</p>
+
+            <p>Out of all of the challenges I faced, I would say the most upsetting setback was when, about a week and a
+                half before the presentations were to take place, one of the parts I bought stopped working. It was the
+                satellite-finder I used to get a reading from the dish, and without it, my project could no longer work.
+                I did not have time to order a new part, and I did not have the specialized parts needed to make a
+                replacement, but I tried my best anyway, since sometimes things can work unexpectedly. I wasn't able to
+                create a replacement, but I was glad that I tried, since I learned a lot about how radios worked. I used
+                what I learned to create a demonstration, which generated radio waves that could be heard with an AM
+                radio.</p>
+
+            <hr>
+
+            <h2>Future Expansion</h2>
+
+            <p>If I had more time, my next steps would be to automate its movement, allow for more detailed measurements
+                of inputs, and attempt spectroscopy. I would 3D print a frame and create a gear system to allow movement
+                of the telescope. However, unlike other examples, I would only allow for one axis of rotation and use
+                the rotation of the Earth as the second. This would allow me to create a simpler system and would work
+                just as well for taking longer, more precise measurements.</p>
+
+            <p>I would also use an RTL-SDR: a cheap, computer-based radio in the form of a USB. It would allow me to get
+                the entirety of the information measured by a radio satellite dish, instead of just crudely looking at
+                the overall signal strength. Using this more effective measurement technique would allow me to perform
+                spectroscopy. I could find the exact frequencies of radio waves generated by objects in space. Some
+                experiments that could be interesting would be measuring solar activity or finding the Hydrogen line
+                emitted by the Milky Way.</p>
+
+            <p>With these changes, you would have a fully functioning radio telescope. Radio telescopes can also receive
+                radio signals (they were used to communicate on the Apollo missions), and you could get messages from
+                satellites, the ISS or even other people using radios. There are a lot of cool things that you could do,
+                and I would be glad to have the opportunity to do any one of them.</p>
         </div>
-    </article>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Physics Final Project - Radio Astronomy Blog</title>
-    </head>
-    <body>
-    
-        <h1>The Design</h1>
-        
-        <p>With my research completed, I turned to making my physical product. For the design, I was planning to simply measure the output from the satellite dish and build a mechanism to allow the dish to scan the sky, but faced some challenges.</p>
-    
-        <p>The first mistake I made was thinking that the satellite dish measured a frequency of around 1-2GHz. This would have been optimal for observing the 1.4GHz Hydrogen Line radiation emitted by the Milky Way, which is the most frequently measured by Radio Satellites. However, the dish actually receives around 10GHz, and its Low-Noise Block Downconverter (LNB) processes the signal and reduces the frequency to 1-2GHz. This was unfortunate, but I would still be able to detect satellites and the Sun, which emit a wider range of frequencies.</p>
-    
-        <p>Another problem was the high frequency of the satellite dish's output. While 2GHz is approximately what we use for wi-fi and other wireless electronics, you still need specialized components that function at high frequencies. For example, components like diodes, that are supposed to keep current moving in one direction and block current in the other, will 'leak' and let current through both ways if the frequency changes fast enough. This means that common methods of measurement don't work, like an Arduino, so I bought a satellite finder, which is commonly used to align Satellite TV dishes. The satellite finder only measures the total strength of the signal, so all information regarding the frequency is lost, which isn't ideal, but it would work for my project. With the absolute output of the satellite finder, I could now hook up an Arduino and record the total strength of the signal received.</p>
-    
-        <p>Next, I needed to supply the 18V used by the satellite dish's internal components. Usually, it is provided by the TV and the receiver it is connected to. Instead, I created a power supply using batteries. This works better for measurements because batteries do not produce fluctuating voltages, unlike an AC power supply. I did not have enough time to create a mechanism to move the satellite dish automatically, but I was still able to make some measurements by manually moving the antenna.</p>
-    
-        <hr>
-    
-        <h2>Challenges and Problem Solving</h2>
-    
-        <p>I chose a difficult topic for my project and faced a lot of challenges as a result, from difficulties with taking measurements and powering it, to an irreplaceable part breaking. Even researching was challenging, since radio astronomy relies on advanced fields like quantum physics and electronics. But the journey of undertaking the project and the physics knowledge I gained made it worthwhile.</p>
-    
-        <p>When I first tested my product, I was getting a ton of random noise in my readings, making it completely illegible. I remembered that any wire can act as an antenna—a moving electromagnetic wave will induce a current through induction. This is why many radio telescopes are located far from civilization or in Radio Quiet Zones. To combat this, I used aluminum foil to shield components when taking measurements. Additionally, I decided to apply what we learned in class when doing labs: taking multiple measurements and averaging them to get a more accurate result. By combining these strategies, I was able to achieve significantly improved readings and take some successful measurements.</p>
-    
-        <p>Another big problem I had was supplying consistent power to the satellite dish. I could not use an outlet power-supply because the AC would cause too much electrical noise and prevent proper measurements. Using batteries was difficult as well, since I needed 18V to power the satellite dish. I initially used two 9V batteries, but they would run out quickly. I settled on using twelve 1.5V D-cell batteries, which are similar to AA batteries but last much longer. I also had issues with wires disconnecting, so I asked my friend, who had experience working with electronics and learned how to properly solder. In the end, I was able to use what I learned from trial and error to create a reliable setup.</p>
-    
-        <p>Out of all of the challenges I faced, I would say the most upsetting setback was when, about a week and a half before the presentations were to take place, one of the parts I bought stopped working. It was the satellite-finder I used to get a reading from the dish, and without it, my project could no longer work. I did not have time to order a new part, and I did not have the specialized parts needed to make a replacement, but I tried my best anyway, since sometimes things can work unexpectedly. I wasn't able to create a replacement, but I was glad that I tried, since I learned a lot about how radios worked. I used what I learned to create a demonstration, which generated radio waves that could be heard with an AM radio.</p>
-    
-        <hr>
-    
-        <h2>Future Expansion</h2>
-    
-        <p>If I had more time, my next steps would be to automate its movement, allow for more detailed measurements of inputs, and attempt spectroscopy. I would 3D print a frame and create a gear system to allow movement of the telescope. However, unlike other examples, I would only allow for one axis of rotation and use the rotation of the Earth as the second. This would allow me to create a simpler system and would work just as well for taking longer, more precise measurements.</p>
-    
-        <p>I would also use an RTL-SDR: a cheap, computer-based radio in the form of a USB. It would allow me to get the entirety of the information measured by a radio satellite dish, instead of just crudely looking at the overall signal strength. Using this more effective measurement technique would allow me to perform spectroscopy. I could find the exact frequencies of radio waves generated by objects in space. Some experiments that could be interesting would be measuring solar activity or finding the Hydrogen line emitted by the Milky Way.</p>
-    
-        <p>With these changes, you would have a fully functioning radio telescope. Radio telescopes can also receive radio signals (they were used to communicate on the Apollo missions), and you could get messages from satellites, the ISS or even other people using radios. There are a lot of cool things that you could do, and I would be glad to have the opportunity to do any one of them.</p>
-    
-    </body>
-    </html>
-    
+</body>
+
+</html>
